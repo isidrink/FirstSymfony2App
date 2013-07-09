@@ -1,0 +1,376 @@
+{% extends "eCrowdMainBundle:Default:base.html.twig" %}
+
+    {% block stylesheet %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{ asset('bundles/eCrowdMain/css/ecrowd.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/eCrowdMain/css/reveal.css') }}" />
+    {% endblock %}
+    
+{% block nav %}
+{% endblock %}
+
+
+{% block container %}
+
+    
+<div id="homescreen" class="container-fluid homecontainer shadow">
+    <div id="pagebody" class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12 toptext">
+                <div class="headerline span11">Opportunidades de inversión en proyectos de eficiencia energetica y sostenibilidad</div>
+                <div class="logo span1"><img src="{{ asset('bundles/eCrowdMain/images/ECrowd.png') }}" style="max-width:90px"></div>
+            </div>
+        </div>
+        <div class="row-fluid" style="margin-top:40px">
+          <div class="span12 toptext">
+            <div class="span6"></div>
+            <div class="span3" style="margin-left:0px;">
+               <div class="callout shadow">6,1%</BR>Haz crecer</BR>tus ahorros</div>
+            </div>
+            <div class="span3" style="margin-left:0px;">
+               <div class="callout shadow">Tu eliges</BR>el proyecto</BR>en que participar</div>
+            </div>
+          </div>
+        </div>
+        <form id="formInteresados" action="" method="post">
+            <div class="row-fluid" style="margin-top:40px">
+                <div class="span7"></div>
+                <div class="span4">
+                    <div class="masMail" id="mailId">
+			<div class="condicionesMasMail">
+				<div class="masInfo">
+					<input id="emailIntesados" type="text" value="introduce tu email" name="introduce tu email" maxlength="60">
+				</div>
+				<div class="condicionesCheck">
+					<input id="checkPoliticas" type="checkbox" name="checkPoliticas" value="aceptar">
+					<label><a id="link_politicas">S&iacute;, he leido y acepto las condiciones</a></label>
+				</div>
+			</div>
+                    </div>
+                </div>
+                <div class="span1"></div>
+           </div>
+           <div class="row-fluid">
+               <div class="span7"></div>
+                <div class="botones span3">
+                    <div class="floatL" style="margin: auto;">
+                    <a id="abrircuenta" href="#" class="btn btn-warning disabled"><div class="btntopline">Abrir cuenta</div><div class="btndownline">solo con invitación</div></a>
+                    </div>
+                    <div class="floatL" style="width:10px; height:1px;" style="margin: auto;">
+                    </div>
+                    <div class="floatL" style="margin: auto;">
+                        <a id="suscribir" href="#" class="btn btn-warning disabled"><div class="btntopline"><i class="icon-white icon-envelope"></i>&nbsp;Recibir</BR>información</div></a>
+                    </div>
+                </div>
+                <div class="span2"></div>
+           </div>
+        </form>
+	<div id="redireccion"></div>
+        <div class="row-fluid" style="height:50px; "></div>
+	</div>
+    </div>
+
+<div id="modal" class="reveal-modal">
+					<h1 class="titulo">Protecci&oacute;n de datos</h1>
+					<div class="linea_inferior1 margB20"></div>
+					<div class="fclear"></div>
+					<div class="condiciones padB20">
+						<p class="textoGenerico padb5">A trav&eacute;s de la plataforma no se recaban datos de car&aacute;cter personal, salvo en el sentido que se expresa a continuaci&oacute;n: </p>
+						<p class="textoGenerico padb5">El usuario podr&aacute; facilitar a comunitae.com su direcci&oacute;n de correo electr&oacute;nico para recibir informaci&oacute;n sobre la puesta en marcha de la plataforma 
+							y los diferentes servicios relacionados con &eacute;sta. Si no desea recibir esta informaci&oacute;n, por favor abst&eacute;ngase de facilitarnos su direcci&oacute;n de correo electr&oacute;nico. </p>
+						<p class="textoGenerico padb5">El usuario podr&aacute;, asimismo, registrarse en la plataforma, habilit&aacute;ndosele al efecto un espacio personal. Los datos proporcionados por el usuario mediante la 
+							cumplimentaci&oacute;n del formulario de registro se incorporar&aacute;n a un fichero del que comunitae.com es responsable, y ser&aacute;n tratados para el acceso y gesti&oacute;n de dicho espacio 
+							personal. Asimismo, los datos del usuario podr&aacute;n utilizarse  para la promoci&oacute;n, incluso por medios electr&oacute;nicos, de servicios y productos relacionados con la plataforma y con el 
+							sector financiero, de seguros y telecomunicaciones.  Estas comunicaciones podr&aacute;n dirigirse a la direcci&oacute;n f&iacute;sica facilitada por el usuario, a su direcci&oacute;n de correo 
+							electr&oacute;nico y/o a su tel&eacute;fono m&oacute;vil mediante mensaje de texto, as&iacute; como a su espacio personal en la plataforma. Asimismo, comunitae.com.com podr&aacute; ceder sus datos 
+							a entidades de los sectores antes indicados, para que &eacute;stas los usen para los prop&oacute;sitos de promoci&oacute;n antes determinados.</p>    
+						<p class="textoGenerico padb5">El usuario podr&aacute; oponerse al env&iacute;o de comunicaciones comerciales en el momento de cumplimentar el formulario de registro. No obstante, en caso de 
+							oposici&oacute;n por el usuario, comunitae.com no puede garantizar que no le sean enviadas ofertas en promociones en las que se utilicen leg&iacute;timamente otras fuentes en las que consten los 
+							datos del usuario.</p>   
+						<p class="textoGenerico padb5">Tanto si facilita su direcci&oacute;n de correo electr&oacute;nico, como si se registra en la plataforma, el usuario podr&aacute; ejercer sus derechos de acceso, 
+							rectificaci&oacute;n, cancelaci&oacute;n y oposici&oacute;n enviando un correo electr&oacute;nico a privacidad@comunitae.com. &Uacute;nicamente el propio usuario o su representante legal 
+							podr&aacute;n ejercer dichos derechos. El usuario podr&aacute; darse de alta o baja del servicio en cualquier momento y de forma gratuita, a trav&eacute;s de su espacio personal.</p>  
+						<p class="textoGenerico padb5">comunitae.com informa a los usuarios de la posible colocaci&oacute;n de "cookies" de forma que al navegar por la plataforma se podr&iacute;a llegar a reconocer 
+							autom&aacute;ticamente datos de navegaci&oacute;n por la misma. Si los usuarios no quieren admitir "cookies" deber&aacute;n eliminar esta posibilidad desde su propio navegador. La no admisi&oacute;n 
+							de "cookies" puede provocar problemas en la navegaci&oacute;n por la plataforma.</p>  
+						<div class="botonera2">
+							<button class="bot_verde close" value="aceptar" type="submit">
+								<span><span><span>ok, ya lo he leido</span></span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+<div class="main_content_area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                   
+                                                                <div class="wpb_row vc_row-fluid "> 
+	<div class="vc_span4 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<p><img class="alignleft size-full wp-image-762" style="margin-right: 10px;" alt="1362848117_Cog" src="http://html.orange-idea.com/goodchoice/wp-content/uploads/2013/02/1362848117_Cog.png" width="32" height="32" /></p>
+<h4 style="margin-bottom: 14px; padding-top: 7px !important;">Powerful Admin Panel</h4>
+<p>We have built a custom options panel with more then 300 options, that let’s you customize your theme any way you want to!</p>
+
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ 
+	<div class="vc_span4 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<p><img class="alignleft size-full wp-image-762" style="margin-right: 10px;" alt="1362848117_Cog" src="http://html.orange-idea.com/goodchoice/wp-content/uploads/2013/02/1362848574_web_layout_info.png" width="32" height="32" /></p>
+<h4 style="margin-bottom: 14px; padding-top: 7px !important;">Page Builder Included</h4>
+<p>Now you’ll be able to create complex layouts within minutes! It’s build on top of the Twitter Bootstrap and jQuery UI frameworks!</p>
+
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ 
+	<div class="vc_span4 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<p><img class="alignleft size-full wp-image-762" style="margin-right: 10px;" alt="1362848117_Cog" src="http://html.orange-idea.com/goodchoice/wp-content/uploads/2013/02/1362848725_iMac-On-Alt.png  " width="32" height="32" /></p>
+<h4 style="margin-bottom: 14px; padding-top: 7px !important;">Responsive Design</h4>
+<p>Responsive designs that addapts to smaller devices. Also GoodChoice Theme have 4 loayouts: 2 Boxed and 2 Fullwidth!</p>
+
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ </div> <div class="wpb_row vc_row-fluid "> 
+	<div class="vc_span12 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_teaser_grid wpb_content_element wpb_carousel columns_count_3 grid_layout-thumbnail_title_text thumbnail_title_text_vc_span4 columns_count_3_thumbnail_title_text wpb_teaser_grid_portfolio-type vc_span12">
+		<div class="wpb_wrapper">
+			<h4 style="margin-top:8px; margin-bottom:5px;" class="wpb_heading wpb_teaser_grid_heading">
+                            Latest Projects
+                        </h4>
+                        <a href="#" class="prev">
+                        </a>
+                        <a href="#" class="next">
+                        </a>
+                        <hr style="margin-top:6px; margin-bottom:10px;">
+                        <div class="teaser_grid_container">
+                            <ul class="thumbnails wpb_thumbnails-fluid" data-layout-mode="fitrows">
+                                <li class="vc_span4">
+                                    <div class="post-thumb portfolio_item"> 
+                                        <div class="view view-first">
+                                            <a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/valeras-vcard/" title="Permalink to VALERA&#8217;s  vCard">
+                                                <img src="" width="" height="" alt="" />
+                                            </a>
+                                            <div class="mask">
+                                                <a href="" rel="prettyPhoto" class="info"></a>
+                                                <a href="https://equilibriogroup.com/Crowd/portfolio-type/valeras-vcard/" class="link"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="descr">
+                                        <h5 class="post-title">
+                                            <a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/valeras-vcard/" title="Permalink to VALERA&#8217;s  vCard">VALERA&#8217;s  vCard</a></h5><div class="entry-content">Has been coded in HTML5 & CSS3 and jQuery</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/veles-theme/" title="Permalink to Veles Theme"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/veles-theme/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/veles-theme/" title="Permalink to Veles Theme">Veles Theme</a></h5><div class="entry-content">Based on 960 grid system with 24 columns</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/another-staff/" title="Permalink to Another Staff"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/another-staff/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/another-staff/" title="Permalink to Another Staff">Another Staff</a></h5><div class="entry-content">Content here, content here, making it look like</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/one-more/" title="Permalink to One more"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/one-more/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/one-more/" title="Permalink to One more">One more</a></h5><div class="entry-content">Ut quisque elit justo, ac dictum sapien ac tortor sem</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/lorem-ipsum/" title="Permalink to Lorem Ipsum"><img src="" width="" height="" alt="PROYECTOS" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/lorem-ipsum/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/lorem-ipsum/" title="Permalink to Lorem Ipsum">Lorem Ipsum</a></h5><div class="entry-content">Apolloni codicellos iam custodio vocem magno dies</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/awesome-project/" title="Permalink to Awesome Project"><img src="" width="" height="" alt="PROYECTOS" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/awesome-project/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/awesome-project/" title="Permalink to Awesome Project">Awesome Project</a></h5><div class="entry-content">Quisque ut elit justo, ac dictum sapien ac tortor sem</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/valera-project/" title="Permalink to Valera Project"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/valera-project/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/valera-project/" title="Permalink to Valera Project">Valera Project</a></h5><div class="entry-content">This theme is very flexible and easy for customizing</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/pride-template/" title="Permalink to Pride Template"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/pride-template/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/pride-template/" title="Permalink to Pride Template">Pride Template</a></h5><div class="entry-content">Powerful HTML5 and CSS3 Site Template</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/commander-theme/" title="Permalink to Commander Theme"><img src="" width="" height="" alt="" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/commander-theme/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/commander-theme/" title="Permalink to Commander Theme">Commander Theme</a></h5><div class="entry-content">It has a solid flexible responsive layout</div></div></li> <li class="vc_span4"><div class="post-thumb portfolio_item"> <div class="view view-first"><a class="link_image" href="https://equilibriogroup.com/Crowd/portfolio-type/test/" title="Permalink to Builder Theme"><img src="" width="" height="" alt="logo" /></a><div class="mask"><a href="" rel="prettyPhoto" class="info"></a><a href="https://equilibriogroup.com/Crowd/portfolio-type/test/" class="link"></a></div></div></div><div class="descr"><h5 class="post-title"><a class="link_title" href="https://equilibriogroup.com/Crowd/portfolio-type/test/" title="Permalink to Builder Theme">Builder Theme</a></h5><div class="entry-content">Powerful WordPress Theme with hundreds options</div></div></li> </ul></div>
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ </div> <div class="wpb_row vc_row-fluid "> 
+	<div class="vc_span6 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<h4>About Company</h4>
+<p>Like you, we love building awesome products on the web. We love it so much, we decided to help people just like us do it easier, better, and faster. Bootstrap is built for you. GoodChoice is designed to help people of all skill levels. Various versions have evolved over the years awesome text goes here</p>
+<div class="row-fluid">
+<div class="span4">
+<ul class="unstyled" style="font-size: 11px; margin-bottom: 10px;">
+<li><i class="icon-user"></i> Built for and by nerds</li>
+<li><i class="icon-th"></i> 12-column grid</li>
+<li><i class="icon-resize-horizontal"></i> Max-width 1200px</li>
+<li><i class="icon-book"></i> Growing library</li>
+</ul>
+</div>
+<div class="span4">
+<ul class="unstyled" style="font-size: 11px; margin-bottom: 10px;">
+<li><i class="icon-resize-small"></i> Responsive design</li>
+<li><i class="icon-eye-open"></i> Cross-everything</li>
+<li><i class="icon-list-alt"></i> Styleguide docs</li>
+<li><i class="icon-cog"></i> jQuery plugins</li>
+</ul>
+</div>
+<div class="span4">
+<ul class="unstyled" style="font-size: 11px; margin-bottom: 10px;">
+<li><i class="icon-user"></i> Built for and by nerds</li>
+<li><i class="icon-th"></i> 12-column grid</li>
+<li><i class="icon-resize-horizontal"></i> Max-width 1200px</li>
+<li><i class="icon-book"></i> Growing library</li>
+</ul>
+</div>
+</div>
+
+		</div> 
+	</div>  
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<h4 class="testim">Clients Testimomials</h4>
+
+			<div class="sidebar">
+				<div class="testimonialrotator">
+					
+			<div class="testimonial">
+				<div class="main_testimonial"><div class="blockquote">In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Content of a page when looking at its layout it is a long content.</div></div>
+				<div class="the-author">Mikle / CEO Some Company</div>
+			</div>
+	
+			<div class="testimonial">
+				<div class="main_testimonial"><div class="blockquote">Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that. Lorem ipsum dolor sit amet, consectetuer adipiscing.</div></div>
+				<div class="the-author">Jhon Doe</div>
+			</div>
+	
+				</div>
+			</div>
+	
+
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ 
+	<div class="vc_span6 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_gallery wpb_posts_slider wpb_content_element vc_span12">
+		<div class="wpb_wrapper">
+			<h4 class="wpb_heading wpb_posts_slider_heading">Recent Posts</h4><div class="wpb_gallery_slides wpb_flexslider flexslider_fade flexslider" data-interval="3" data-flex_fx="fade"><ul class="slides"><li><a class="link_image" href="https://equilibriogroup.com/Crowd/538/" title="Permalink to Some Post Title"><img src="" width="" height="" alt="" /></a><div class="flex-caption blog_item"><div class="blog_head"><div class="date"><h6><i class="icon-calendar"></i> 07 Jan / 2013</h6></div><h3><a href="https://equilibriogroup.com/Crowd/538/">Some Post Title </a></h3></div>
+				<div class="meta">
+					<span><strong>By</strong> MvHaperen</span>
+					<span>0 comments</span>
+				</div>
+				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nunc dui, tristique in semper vel, congue sed ligula. Nam dolor ligula, faucibus ...<h6 class="read_more" style="margin-top:10px !important"><a style="margin-top:15px;" href="https://equilibriogroup.com/Crowd/538/">Read More</a></h6></div></li></ul></div>
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ </div> <div class="wpb_row vc_row-fluid "> 
+	<div class="vc_span12 wpb_column column_container">
+		<div class="wpb_wrapper">
+			 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			
+<div style="background: #f5f5f5; padding: 25px; margin-top: 10px;">
+<div class="row-fluid">
+<div class="span9">
+<h3 style="margin-bottom: 0px !important;">Super Powerful WordPress Theme</h3>
+<p style="margin-bottom: 0px !important;">With GoodChoice Theme you can create and manage page easily via &#8216;Page Builder&#8217;. Also, To create your own style, it&#8217;s very easy to change most of elements&#8217; color via Theme Options panel. And it&#8217;s just for $45!</p>
+</div>
+<div class="span3"><a class="btn btn-info btn-large" style="margin-top: 17px; float: right;">Purchase Now!</a></div>
+</div>
+</div>
+
+		</div> 
+	</div>  
+		</div> 
+	</div> 
+ </div>
+                                 
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
+
+
+{% block javascript %}
+{{parent()}}
+<script type="text/javascript" src="{{ asset('bundles/eCrowdMain/js/jquery.reveal.js') }}"></script>
+<script type="text/javascript" src=" {{asset('bundles/eCrowdMain/js/utilities.js')}}"></script>
+<script type='text/javascript' src=" {{asset('bundles/eCrowdMain/js/jcarousellite_1.0.1.min.js?ver=3.5.2')}}"></script>
+<script>
+  var htmlCaja = null;
+</script>
+<script>
+  $(document).ready(function(){
+    htmlCaja =  $("#mailId").html();
+    ventanaModal('link_politicas', 'modal');
+    $('#emailIntesados').on("keyup", function() {
+      val = $('#emailIntesados').val();
+      if($("#checkPoliticas").is(':checked') && isValidEmailAddress(val)){
+        $('#suscribir').removeClass("disabled");
+        $('#suscribir').attr("href","javascript:submitForm('2')");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').attr("href","javascript:submitForm('1')");
+      } else {
+        $('#suscribir').addClass("disabled");
+        $('#suscribir').attr("href","#");
+        $('#abrircuenta').addClass("disabled");
+        $('#abrirCuenta').attr("href","#");
+      }
+    });
+    $("#checkPoliticas").on("click", function() {
+      val = $('#emailIntesados').val();
+      if($("#checkPoliticas").is(':checked') && isValidEmailAddress(val)){
+        $('#suscribir').removeClass("disabled");
+        $('#suscribir').attr("href","javascript:submitForm('2')");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').attr("href","javascript:submitForm('1')");
+      } else {
+        $('#suscribir').addClass("disabled");
+        $('#suscribir').attr("href","#");
+        $('#abrircuenta').addClass("disabled");
+        $('#abrirCuenta').attr("href","#");
+      }
+    });
+    $('#emailIntesados').on("click", function(){
+      if ($(this).val()==='introduce tu email') {
+        $(this).attr('value','');
+      }
+    });
+    
+    $(function() {
+      $('.teaser_grid_container').jCarouselLite({
+          btnNext: ".next",
+          btnPrev: ".prev"
+      });
+    });
+  });
+			
+  function submitForm(opcion){
+    var url = "";
+    if (opcion=='1') {			
+      url = "/interesados.html?method=grabar&email="+$("#emailIntesados").val()+"&accion=ABRIR_CUENTA&puerta=201";
+    } else {
+      url = "/interesados.html?method=grabar&email="+$("#emailIntesados").val()+"&accion=MAS_INFO&puerta=201";
+    }
+  $("#redireccion").load(url,function(){
+    if (opcion=='2') {		
+      $("#mailId").fadeIn(function(){$(this).html("<p>Gracias! Te mantendremos informado</p>")}).delay(3000).fadeIn(function(){$(this).html(htmlCaja)});
+    } else {
+      $("#formInteresados").attr('action', '/habilitarPujarContrato.html?email='+$("#emailIntesados").val());
+      $("#formInteresados").submit();
+    }					
+   });
+   
+   
+}
+</script>
+{% endblock %}
+
+

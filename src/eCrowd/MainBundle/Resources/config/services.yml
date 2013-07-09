@@ -1,0 +1,51 @@
+parameters:
+    my_user_provider.class: eCrowd\MainBundle\Security\Core\User\FOSUBUserProvider
+  
+services:
+    eCrowd_main.menu_builder:
+        class: eCrowd\MainBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory"]
+
+    eCrowd_main.menu.main:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecrowd_main.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu
+          
+    eCrowd_main.menu.user:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecrowd_main.menu_builder
+        factory_method: createUserMenu
+        arguments: ["@request", "@service_container"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: user } # The alias is what is used to retrieve the menu
+            
+    eCrowd_main.menu.footer:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecrowd_main.menu_builder
+        factory_method: createFooterMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: footer } # The alias is what is used to retrieve the menu
+            
+    my_user_provider:
+      class: "%my_user_provider.class%"
+        #this is the place where the properties are passed to the UserProvider - see config.yml
+      arguments: [@fos_user.user_manager,{facebook: facebook_id, google: google_id}]
+
+    eCrowd_user.registration.form.type:
+        class: eCrowd\MainBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: eCrowd_user_registration }
+
+#    e_crowd_main.example:
+#        class: %e_crowd_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+

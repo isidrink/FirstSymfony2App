@@ -1,0 +1,99 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+ <script>
+        window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+                appId      : '579855022035024',                        // App ID from the app dashboard
+                channelUrl : '//ec2-54-225-103-79.compute-1.amazonaws.com/channel.html', // Channel file for x-domain comms
+                status     : true,                                 // Check Facebook Login status
+                xfbml      : true                                  // Look for social plugins on the page
+    });
+        };
+        
+       function after_click() {
+        FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // connected
+                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                } else {
+                    // not_authorized
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                        } else {
+                            alert('Cancelled.');
+                        }
+                    });
+                }
+            });
+    }
+
+        // Load the SDK asynchronously
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        
+
+
+        function fb_login() {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // connected
+                    alert('Already connected, redirect to login page to create token.');
+                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                } else {
+                    // not_authorized
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                        } else {
+                            alert('Cancelled.');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+
+   <div class="container-fluid" id="login-wrapper">
+       <div class="box-title">
+            {{"layout.login" |trans({}, 'FOSUserBundle')}}
+       </div>
+      {% if error %}
+        <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+      {% endif %}
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        <div clas="callout"
+        <div> 
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+        </div>
+        <div>
+            <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+            <input type="password" id="password" name="_password" required="required" />
+        </div>
+        <div>
+        <div class="floatL">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        </div>
+        <div class="floatL" style="margin-left:5px;margin-top:2px;">
+            <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+        </div>
+                </div>
+        <div style="clear:both;">
+            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+            <div class="fb-login-button m_y" scope="email,user_birthday" onlogin="after_click()"></div>
+        </div>
+
+    </form>
+           {% render(controller('HWIOAuthBundle:Connect:connect')) %}
+</div>
+        
+{% endblock fos_user_content %}

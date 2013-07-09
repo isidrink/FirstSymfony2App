@@ -1,0 +1,104 @@
+# src/eCrowd/MainBundle/Resources/config/doctrine/Developer.orm.yml
+eCrowd\MainBundle\Entity\Developer:
+  type: entity
+  table: developer
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      nullable: false
+    NIF:
+      type: string
+      length: 255
+      nullable: false
+    website:
+      type: string
+      length: 255
+      nullable: true
+    contactperson_firstname:
+      type: string
+      length: 255
+      nullable: false
+    contactperson_lastname:
+      type: string
+      length: 255
+      nullable: false
+    contactperson_telefone_fixed:
+      type: string
+      length: 255
+      nullable: false
+    contactperson_telefone_mobile:
+      type: string
+      length: 255
+      nullable: false
+    contactperson_mail:
+      type: string
+      length: 255
+      nullable: false
+    fiscalcontactperson_firstname:
+      type: string
+      length: 255
+      nullable: true
+    fiscalcontactperson_lastname:
+      type: string
+      length: 255
+      nullable: true
+    fiscalcontactperson_telefone_fixed:
+      type: string
+      length: 255
+      nullable: true
+    fiscalcontactperson_telefone_mobile:
+      type: string
+      length: 255
+      nullable: true
+    fiscalcontactperson_mail:
+      type: string
+      length: 255
+      nullable: true
+    address:
+      type: string
+      length: 255
+      nullable: false
+    zip:
+      type: string
+      length: 255
+      nullable: false
+    city:
+      type: string
+      length: 255
+      nullable: false
+    province:
+      type: string
+      length: 255
+      nullable: false
+    country:
+      type: string
+      length: 255
+      nullable: false
+    logo:
+      type: string
+      length: 255
+      nullable: true
+    token:
+      type: string
+      length: 255
+      unique: true
+    is_activated:
+      type: boolean
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+  oneToMany:
+     projects:
+       targetEntity: Project
+       mappedBy: developer
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

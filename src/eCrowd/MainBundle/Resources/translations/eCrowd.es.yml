@@ -1,0 +1,53 @@
+menu:
+    main:
+         first: Como funciona
+         second: ver proyectos
+         third: Sobre ECrowd!
+    second:
+        login: Entrar
+        register: Unirse a eCrowd!
+        logout: Salir
+    footer:
+        first: Lee nuestro blog
+        second: Trabaja con nosotrs
+        third: En la prensa
+        fourth: Conoce el equipo
+        fifth: Condiciones generales
+        
+featured:
+     maintitle: Crezca tu dinero ahorrando energía
+     subtitle: Escoge tu proyecto, Invierta, Disfruta
+     subtitle2:
+       investors: inversores
+       invested: invertido
+       mail: introduce tu email
+       conditionsquestion: Sí, he leido y acepto las condiciones
+       open: Abrir cuenta gratis 
+
+projectbox:
+    pastproject: Proyecto destacado
+    
+homepage:
+    howitworks: Como funciona
+    title: Bienvenido a ECrowd!
+    widget2:
+      title: Como funciona
+      text: bla bla bla in spanish
+    widget3:
+      title: Que dice la gente
+      text: bloe bloe bloe in spanish
+    
+footer:
+    disclaimertitle: Importante!
+    disclaimer: Todos los productos de inversión tienen riesgos. Parte o todo del principal invertido pudiera estar en riesgo y el retorno de la inversión depende del éxito del proyecto invertido. Nuestros productos son inversiones a largo plazo y podrían no realizarse o su valor podría cambiar. Los retornos son variables, y las estimaciones no son garantías del retorno real. Cada producto tiene sus riesgos especificos que están especificados en el prospectus de inversión del proyecto. 
+    disclaimerlink: Más información...
+    
+projectsmall:
+    amount: importe invertido
+    yield: retorno esperado
+    investors: nr. de inversores
+    browse: ver proyectos
+    
+protectiondatos:
+   title: Protección de datos
+   accept: ok, ya lo he leido

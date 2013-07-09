@@ -1,0 +1,20 @@
+services:
+    eCrowd.Main.admin.developer:
+        class: eCrowd\MainBundle\Admin\DeveloperAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: main, label: Developer }
+        arguments: [null, eCrowd\MainBundle\Entity\Developer, eCrowdMainBundle:DeveloperAdmin]
+        calls:
+            - [ setTranslationDomain, [eCrowdMainBundle]]
+        
+    eCrowd.Main.admin.project:
+        class: eCrowd\MainBundle\Admin\ProjectAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: main, label: Project }
+        arguments: [null, eCrowd\MainBundle\Entity\Project, eCrowdMainBundle:ProjectAdmin]
+        
+    eCrowd.Main.admin.contract:
+        class: eCrowd\MainBundle\Admin\ContractAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: main, label: Contract }
+        arguments: [null, eCrowd\MainBundle\Entity\Contract, eCrowdMainBundle:ContractAdmin]

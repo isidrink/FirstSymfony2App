@@ -1,0 +1,238 @@
+{% extends "eCrowdMainBundle:Default:base.html.twig" %}
+
+    {% block stylesheet %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{ asset('bundles/ecrowdmain/css/ecrowd.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/ecrowdmain/css/reveal.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/ecrowdmain/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/ecrowdmain/css/jquery.fancybox.css')}}" type="text/css" media="screen" />
+    {% endblock %}
+    
+{% block container %}
+    <div class="homecontainer shadow">
+        <div class="row-fluid">
+            <div class="span6"></div>
+            <div class="span6">
+                <div class="row-fluid">
+                    <div class="headerline span12">Invierta en proyectos de alta calidad</div>
+                        <!-- Opportunidades de inversión en proyectos de eficiencia energetica y sostenibilidad--->
+                        <!-- Use precompiled CSS files -->
+                </div>
+                <div class="row-fluid">
+                    <div class="span12 callout">
+                    <div id="rateBanner" class="span6 shadow">
+                        <h1>Haz crecer tus ahorros</h1>
+                        <div class="rate">6.1%</div>
+                        <div class="small-print">
+                            Interés previsto después de 5 años.
+                        </div>
+                    </div>
+                    <div id="proyectBanner" class="span6 shadow">
+                        <div class="rate" style="text-align:center;">Elige</div>
+                        <div><h1 style="clear:both">los proyectos</BR>en que participar</h1></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="callout">
+                    <form id="formInteresados" action="" method="post">
+                        <div class="span6">
+                            <div class="masMail" id="mailId">
+                                <div class="condicionesMasMail">
+                                    <div class="masInfo">
+                                        <input id="emailIntesados" type="text" value="introduce tu email" name="introduce tu email" maxlength="60">
+                                    </div>
+                                    <div class="condicionesCheck">
+                                        <input id="checkPoliticas" type="checkbox" name="checkPoliticas" value="aceptar">
+                                        <label>
+                                            <a id="link_politicas">S&iacute;, he leido y acepto las condiciones</a>
+                                        </label>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                   
+                    
+                        <div class="botones span6">
+                            <div class="floatL" style="margin: auto;">
+                                <a id="abrircuenta" href="#" class="btn btn-warning">
+                                    <div class="btntopline">Abrir cuenta</div>
+                                    <div class="btndownline">solo con invitación</div></a>
+                            </div>
+                            <div class="floatL" style="width:10px; height:1px;" style="margin: auto;"></div>
+                            <div class="floatL" style="margin: auto;">
+                                <a id="suscribir" href="#" class="btn btn-custom">
+                                    <div class="btntopline"><i class="icon-white icon-envelope"></i>&nbsp;Recibir</BR>información
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="redireccion"></div>
+                        </div>
+                    </form>
+                             </div>
+                </div>
+                    
+                </div>
+                    <div class="row-fluid" style="padding-bottom:100px">
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row-fluid" style="height:50px; "></div>
+    </div>
+
+<div id="modal" class="reveal-modal">
+					<h1 class="titulo">Protecci&oacute;n de datos</h1>
+					<div class="linea_inferior1 margB20"></div>
+					<div class="fclear"></div>
+					<div class="condiciones padB20">
+						<p class="textoGenerico padb5">A trav&eacute;s de la plataforma no se recaban datos de car&aacute;cter personal, salvo en el sentido que se expresa a continuaci&oacute;n: </p>
+						<p class="textoGenerico padb5">El usuario podr&aacute; facilitar a comunitae.com su direcci&oacute;n de correo electr&oacute;nico para recibir informaci&oacute;n sobre la puesta en marcha de la plataforma 
+							y los diferentes servicios relacionados con &eacute;sta. Si no desea recibir esta informaci&oacute;n, por favor abst&eacute;ngase de facilitarnos su direcci&oacute;n de correo electr&oacute;nico. </p>
+						<p class="textoGenerico padb5">El usuario podr&aacute;, asimismo, registrarse en la plataforma, habilit&aacute;ndosele al efecto un espacio personal. Los datos proporcionados por el usuario mediante la 
+							cumplimentaci&oacute;n del formulario de registro se incorporar&aacute;n a un fichero del que comunitae.com es responsable, y ser&aacute;n tratados para el acceso y gesti&oacute;n de dicho espacio 
+							personal. Asimismo, los datos del usuario podr&aacute;n utilizarse  para la promoci&oacute;n, incluso por medios electr&oacute;nicos, de servicios y productos relacionados con la plataforma y con el 
+							sector financiero, de seguros y telecomunicaciones.  Estas comunicaciones podr&aacute;n dirigirse a la direcci&oacute;n f&iacute;sica facilitada por el usuario, a su direcci&oacute;n de correo 
+							electr&oacute;nico y/o a su tel&eacute;fono m&oacute;vil mediante mensaje de texto, as&iacute; como a su espacio personal en la plataforma. Asimismo, comunitae.com.com podr&aacute; ceder sus datos 
+							a entidades de los sectores antes indicados, para que &eacute;stas los usen para los prop&oacute;sitos de promoci&oacute;n antes determinados.</p>    
+						<p class="textoGenerico padb5">El usuario podr&aacute; oponerse al env&iacute;o de comunicaciones comerciales en el momento de cumplimentar el formulario de registro. No obstante, en caso de 
+							oposici&oacute;n por el usuario, comunitae.com no puede garantizar que no le sean enviadas ofertas en promociones en las que se utilicen leg&iacute;timamente otras fuentes en las que consten los 
+							datos del usuario.</p>   
+						<p class="textoGenerico padb5">Tanto si facilita su direcci&oacute;n de correo electr&oacute;nico, como si se registra en la plataforma, el usuario podr&aacute; ejercer sus derechos de acceso, 
+							rectificaci&oacute;n, cancelaci&oacute;n y oposici&oacute;n enviando un correo electr&oacute;nico a privacidad@comunitae.com. &Uacute;nicamente el propio usuario o su representante legal 
+							podr&aacute;n ejercer dichos derechos. El usuario podr&aacute; darse de alta o baja del servicio en cualquier momento y de forma gratuita, a trav&eacute;s de su espacio personal.</p>  
+						<p class="textoGenerico padb5">comunitae.com informa a los usuarios de la posible colocaci&oacute;n de "cookies" de forma que al navegar por la plataforma se podr&iacute;a llegar a reconocer 
+							autom&aacute;ticamente datos de navegaci&oacute;n por la misma. Si los usuarios no quieren admitir "cookies" deber&aacute;n eliminar esta posibilidad desde su propio navegador. La no admisi&oacute;n 
+							de "cookies" puede provocar problemas en la navegaci&oacute;n por la plataforma.</p>  
+						<div class="botonera2">
+							<button class="bot_verde close" value="aceptar" type="submit">
+								<span><span><span>ok, ya lo he leido</span></span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+<div id="main_content_area" class="container-fluid">
+    <div class="container">
+        <div id="content-third" class="row-fluid">
+            {% render( url('e_crowd_latest_project')) %}
+            <section id="how-works" class="vertical-separator span4">
+                <div class="box-title">
+                    {{"homepage.howitworks"|trans({}, 'eCrowd') }}
+                </div>
+                <div class="content-focused">
+                    Mosaic connects investors to solar projects
+                </div>
+                <i class="icon-home-how-works"></i>
+                <div class="content-focused">
+                    Projects repay investors with interest
+                </div>
+                <a href="/how-it-works" class="btn">How Mosaic Works<i class="icon-chevron-right"></i></a>
+            </section><!-- fix whitespace inline-block bug -->
+            <section id="investor-testimonial" class="span4">
+                <div class="box-title">
+                    Investor Testimonial
+                </div>
+                <div class="sub-header muted">
+                    "I love that I get to invest directly in my community, to actually see where my money is going. Mosaic is
+                    making socially conscious investing easy and doable for everyone."
+                </div>
+                <div class="thumbnail">
+                    <i class="icon-home-kristin-hull"></i>
+                </div>
+                <div class="wrapper">
+                    <div class="weak">
+                        Kristin Hull
+                    </div>
+                    <div class="muted">
+                        President of the NIA Community Foundation
+                    </div>
+                </div>
+                <a href="/about-mosaic" class="btn">Learn More About Mosaic<i class="icon-chevron-right"></i></a>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block javascript %}
+{{parent()}}
+<script type="text/javascript" src="{{ asset('bundles/ecrowdmain/js/jquery.reveal.js') }}"></script>
+<script type="text/javascript" src=" {{asset('bundles/ecrowdmain/js/utilities.js')}}"></script>
+<script type='text/javascript' src=" {{asset('bundles/ecrowdmain/js/jcarousellite_1.0.1.min.js?ver=3.5.2')}}"></script>
+<script>
+  var htmlCaja = null;
+</script>
+<script>
+  $(document).ready(function(){
+    htmlCaja =  $("#mailId").html();
+    ventanaModal('link_politicas', 'modal');
+    $('#emailIntesados').on("keyup", function() {
+      val = $('#emailIntesados').val();
+      if($("#checkPoliticas").is(':checked') && isValidEmailAddress(val)){
+        $('#suscribir').removeClass("disabled");
+        $('#suscribir').attr("href","javascript:submitForm('2')");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').attr("href","javascript:submitForm('1')");
+      } else {
+        $('#suscribir').addClass("disabled");
+        $('#suscribir').attr("href","#");
+        $('#abrircuenta').addClass("disabled");
+        $('#abrirCuenta').attr("href","#");
+      }
+    });
+    $("#checkPoliticas").on("click", function() {
+      val = $('#emailIntesados').val();
+      if($("#checkPoliticas").is(':checked') && isValidEmailAddress(val)){
+        $('#suscribir').removeClass("disabled");
+        $('#suscribir').attr("href","javascript:submitForm('2')");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').removeClass("disabled");
+        $('#abrircuenta').attr("href","javascript:submitForm('1')");
+      } else {
+        $('#suscribir').addClass("disabled");
+        $('#suscribir').attr("href","#");
+        $('#abrircuenta').addClass("disabled");
+        $('#abrirCuenta').attr("href","#");
+      }
+    });
+    $('#emailIntesados').on("click", function(){
+      if ($(this).val()==='introduce tu email') {
+        $(this).attr('value','');
+      }
+    });
+    
+    $(function() {
+      $('.teaser_grid_container').jCarouselLite({
+          btnNext: ".next",
+          btnPrev: ".prev"
+      });
+    });
+  });
+			
+  function submitForm(opcion){
+    var url = "";
+    if (opcion==='1') {			
+      url = "/interesados.html?method=grabar&email="+$("#emailIntesados").val()+"&accion=ABRIR_CUENTA&puerta=201";
+    } else {
+      url = "/interesados.html?method=grabar&email="+$("#emailIntesados").val()+"&accion=MAS_INFO&puerta=201";
+    }
+  $("#redireccion").load(url,function(){
+    if (opcion==='2') {		
+      $("#mailId").fadeIn(function(){$(this).html("<p>Gracias! Te mantendremos informado</p>")}).delay(3000).fadeIn(function(){$(this).html(htmlCaja)});
+    } else {
+      $("#formInteresados").attr('action', '/habilitarPujarContrato.html?email='+$("#emailIntesados").val());
+      $("#formInteresados").submit();
+    }					
+   });
+   
+   
+}
+</script>
+{% endblock %}
+
+

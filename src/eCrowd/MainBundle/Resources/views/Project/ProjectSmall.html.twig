@@ -1,0 +1,35 @@
+               {% trans_default_domain "eCrowd" %}
+                <div class="box-title">
+                    {{"projectbox.pastproject"|trans }}
+                </div>
+                <div class="content-focused">
+                {{project.name}}
+                </div>
+                <div class="city muted">
+                {{project.city}}
+                </div>
+                <div class="thumbnail">
+                    {% media 5, 'small' %}
+                </div>
+                <div class="wrapper">
+                    <div class="weak">
+                        {{'projectsmall.amount' | trans }}
+                    </div>
+                    <div class="important">
+                        {{project.investment|number_format(0, ',', '.')}} €
+                    </div>
+                    <div class="weak">
+                        {{'projectsmall.yield' | trans }}
+                    </div>
+                    <div class="important">
+                        {{project.yield|number_format(1, ',', '.')}}%
+                    </div>
+                    <div class="weak">
+                        {{'projectsmall.investors' | trans }}
+                    </div>
+                    <div class="important">
+                        51
+                    </div>
+                </div>
+                <a href="/browse-investments" class="btn">{{'projectsmall.browse' | trans }}<i class="icon-chevron-right"></i></a>
+

@@ -1,0 +1,91 @@
+# src/eCrowd/MainBundle/Resources/config/doctrine/Project.orm.yml
+eCrowd\MainBundle\Entity\Project:
+  type: entity
+  table: project
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      nullable: false
+    longdescription:
+      type: text
+    shortdescription:
+      type: string
+      length: 255
+    type:
+      type: smallint
+      nullable: false
+    power:
+      type: integer
+    investment:
+      type: decimal
+      precision: 10
+      scale: 2
+    mininvestment:
+      type: decimal
+      precision: 10
+      scale: 2
+    yield:
+      type: decimal
+      precision: 3
+      scale: 1
+    commissioninvestor:
+      type: decimal
+      precision: 3
+      scale: 1
+    commissiondeveloper:
+      type: decimal
+      precision: 3
+      scale: 1
+    address:
+      type: string
+      length: 255
+    zip:
+      type: string
+      length: 255
+    city:
+      type: string
+      length: 255
+    province:
+      type: string
+      length: 255
+    country:
+      type: string
+      length: 255
+    fotos:
+      type: string
+      length: 255
+      nullable: true
+    movies:
+      type: string
+      length: 255
+      nullable: true
+    token:
+      type: string
+      length: 255
+      unique: true
+    is_public:
+      type: boolean
+      nullable: true
+    is_activated:
+      type: boolean
+      nullable: true
+    is_ended:
+      type: boolean
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true;
+  manyToOne:
+    developer:
+      targetEntity: Developer
+      inversedBy: projects
+  lifecycleCallbacks:
+    prePersist: [ setTokenValue, setCreatedAtValue]
+    preUpdate: [ setUpdatedAtValue ]

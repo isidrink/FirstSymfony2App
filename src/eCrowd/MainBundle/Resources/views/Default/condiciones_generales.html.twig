@@ -1,0 +1,31 @@
+{% trans_default_domain "eCrowd" %}
+{% javascripts 'bundles/ecrowdmain/js/condiciones/*.js' combine=true%}
+    <script src="{{ asset_url}}"></script>
+{% endjavascripts %}
+<script>
+  var htmlCaja = null;
+  $(document).ready(function(){
+    htmlCaja =  $("#mailId").html();
+    ventanaModal('link_politicas', 'modal');
+    $('#abrirCuenta').on("click", function(){
+      if ($(this).val()==='introduce tu email') {
+        $(this).attr('value','');
+      }
+    });
+    
+   });
+</script>
+
+
+<div class="fclear"></div>
+<div id="modal" class="reveal-modal">
+    <h1 class="titulo">{{ 'protectiondatos.title' | trans }}</h1>
+    <div class="linea_inferior1 margB20"></div>
+    <div class="fclear"></div>
+    <div class="condiciones padB20">
+        {% autoescape false %}
+            {{contract.contracttext}}
+        {% endautoescape %}
+        <a href="#" class="btn btn-success close-reveal-modal">{{ 'protectiondatos.accept' | trans }}</a>
+    </div>
+</div>

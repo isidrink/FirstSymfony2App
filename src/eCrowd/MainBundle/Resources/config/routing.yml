@@ -1,0 +1,19 @@
+e_crowd_root:
+    pattern:  /
+    defaults:
+      _controller: eCrowdMainBundle:Default:index    
+      
+e_crowd_home:
+    pattern:  /home
+    defaults:
+      _controller: eCrowdMainBundle:Default:index
+      
+e_crowd_latest_project:
+    pattern:  /projects/recent
+    defaults:
+      _controller: eCrowdMainBundle:Project:showrecent
+      
+e_crowd_client:
+    pattern:  /client
+    defaults:
+      _controller: eCrowdMainBundle:Default:client 

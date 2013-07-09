@@ -1,0 +1,54 @@
+menu:
+    main:
+        first: How it works
+        second: Browse investments
+        third: About ECrowd!
+    second:
+        login: Login
+        register: join eCrowd!
+        logout: Logout
+    footer:
+        first: Read our blog
+        second: Work with us
+        third: In the press
+        fourth: Meet the team
+        fifth: General conditions
+featured:
+     maintitle: Grow your money by saving energy
+     subtitle: Pick your project, Invest, Enjoy
+     subtitle2:
+       investors: investors
+       invested: invested
+       mail: introduce your mail
+       conditionsquestion: Yes, I have read and accept the general conditions 
+       open: open free account 
+               
+projectbox:
+    pastproject: Past project
+    
+homepage:
+    howitworks: How it Works
+    title: Welcome to ECrowd!
+    widget2:
+      title: How it works
+      text: bla bla bla in english
+    widget3:
+      title: What they say
+      text: bloe bloe bloe in english
+
+    
+footer:
+    disclaimertitle: Important! - Please read        
+    disclaimer: As with any investment product there are risks. Part or all of your original invested capital may be at risk and any return on your investment depends on the success of the project invested in. All our products are long term investments and may not be readily realisable (and their value can rise or fall). Estimated rates of return are variable and estimates are no guarantee of actual return. Specific risks with each product will apply. Consider all risks before investing and read the Offer Document for each investment.
+    disclaimerlink: More information...
+    
+projectsmall:
+    amount: amount invested
+    yield: expected return
+    investors: nr. of investors
+    browse: browse projects
+    
+
+protectiondatos:
+   title: Personal data protection
+   accept: ok, I have read it

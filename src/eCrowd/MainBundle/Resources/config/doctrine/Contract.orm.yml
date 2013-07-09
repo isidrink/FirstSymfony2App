@@ -1,0 +1,35 @@
+# src/eCrowd/MainBundle/Resources/config/doctrine/Contract.orm.yml
+eCrowd\MainBundle\Entity\Contract:
+  type: entity
+  table: contract
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    type:
+      type: string
+      length: 255
+      nullable: false
+    version:
+      type: string
+      length: 255
+      nullable: false
+    locale:
+      type: string
+      length: 255
+      nullable: false
+    is_active:
+      type: boolean
+      nullable: false
+    contracttext:
+      type: text
+      nullable: false
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true;
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue]
+    preUpdate: [ setUpdatedAtValue ]

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]--> 
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]--> 
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--> 
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+{% trans_default_domain "eCrowd" %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ 'homepage.title' | trans() }}</title> 
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <!-- Use precompiled CSS files -->
+    {% block stylesheet %}
+      {% stylesheets '@bootstrap_less' combine=true %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+      {% endstylesheets %} 
+    {% endblock %}
+        
+    {% block headjavascript %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ asset('js/jquery.js') }}"><\/script>')</script>
+         {% javascripts filter='?yui_js' 'bundles/ecrowdmain/js/*.js' combine=true%}
+                <script src="{{ asset_url}}"></script>
+            {% endjavascripts %}
+    {% endblock %}
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="{{ asset('js/html5shiv.js') }}"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../assets/ico/favicon.png">
+        
+</head>
+	
+
+
+
+<body id="home" style="cursor: auto;">
+    
+<div class="container-fluid" id="background">
+<div class="container-fluid" id="main_wrapper">
+{% block nav %}
+   <div class="clearfix" id="master_banner">
+        <span>
+            <a class="master_pngfix" href="{{path('e_crowd_home')}}">eCrowd</a></span>
+              {{ knp_menu_render('user') }}
+              {{ knp_menu_render('main') }}
+             </div>
+{% endblock %}
+
+
+{% block container %}
+{% endblock %}
+
+</div>
+    </div>
+        {% block footer %}
+            <div id="footer" class="container-fluid">
+            <div id="footer-wrapper" class="row-fluid">
+                <div class="span3">
+                     {{ knp_menu_render('footer') }}
+                </div>
+                <div class="span6">
+                    <div class="footer-disclaimer">
+                        <div class="footer-disclaimer-title">{{ 'footer.disclaimertitle' | trans }}</div>
+                        <div class="footer-disclaimer-text">{{ 'footer.disclaimer' | trans }}<a href="./Risks">{{ 'footer.disclaimerlink' | trans }}</a></div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <ul class="social-icons">
+                        <li class="twitter-icon"><a href="http://equilibrio.com"><img src="{{asset('bundles/ecrowdmain/icons/twitter-icon.png')}}" width="24" height="24" alt="Twitter"></a></li>
+                        <li class="facebook-icon"><a href="http://equilibrio.com"><img src="{{asset('bundles/ecrowdmain/icons/facebook-icon.png')}}" width="24" height="24" alt="Facebook"></a></li>
+                        <li class="linkedin-icon"><a href="http://equilibrio.com"><img src="{{asset('bundles/ecrowdmain/icons/linkedin-icon.png')}}" width="24" height="24" alt="LinkedIn"></a></li>
+                        <li class="rss-feed-icon"><a href="http://equilibrio.com"><img src="{{asset('bundles/ecrowdmain/icons/rss-feed-icon.png')}}" width="24" height="24" alt="RSS Feed"></a></li>
+                        <li class="google-plus-icon"><a href="http://equilibrio.com"><img src="{{asset('bundles/ecrowdmain/icons/googleplus-icon.png')}}" width="24" height="24" alt="Google Plus"></a></li>
+                    </ul>
+                </div>
+            </div>
+                    </div>
+   {% endblock %}
+     
+        {% block javascript %}
+            {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+           
+        {% endblock %}
+    </div>
+</body>
+{% include "GoogleBundle:Analytics:async.html.twig" %}
+</html>

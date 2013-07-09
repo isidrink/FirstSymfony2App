@@ -1,0 +1,12 @@
+{% extends 'eCrowdMainBundle:Default:base.html.twig' %}
+{% block stylesheet %}
+    {{parent()}}
+     {% stylesheets filter='cssrewrite' combine=true filter='cssrewrite'
+            'bundles/ecrowdmain/css/*.css' 
+        %}
+        <link rel="stylesheet" href="{{ asset_url  }}" />
+     {% endstylesheets %}
+{% endblock %}
+{% block container %}
+  {{ block('fos_user_content') }}
+{% endblock %}
